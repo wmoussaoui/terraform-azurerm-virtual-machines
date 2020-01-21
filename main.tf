@@ -53,6 +53,7 @@ resource "azurerm_virtual_machine" "virtual_machine" {
     os_profile {
         computer_name  = "${element(var.host_names, count.index)}"
         admin_username = "${element(var.host_names, count.index)}"
+        admin_password = "${element(var.admin_password, count.index)}"
     }
 
     os_profile_linux_config {
