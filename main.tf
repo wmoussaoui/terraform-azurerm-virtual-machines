@@ -60,6 +60,7 @@ resource "azurerm_virtual_machine" "virtual_machine" {
         provision_vm_agent = true
         timezone = "Romance Standard Time"
     }
+    }
 
 resource "azurerm_availability_set" "availability_set" {
   name                = "${var.availability_set_name}"
