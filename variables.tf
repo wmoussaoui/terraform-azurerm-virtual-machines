@@ -35,9 +35,9 @@ variable "nb_instances" {
     default = "1"
 }
 
-variable "ssh_key" {
-    description = "Pass public SSH key for each VM" 
-}
+#variable "ssh_key" {
+#    description = "Pass public SSH key for each VM" 
+#}
 
 variable "os_image_publisher" {
     description = "VM image publisher"
