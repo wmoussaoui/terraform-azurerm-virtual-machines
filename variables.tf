@@ -83,6 +83,10 @@ variable "host_names" {
     description = "Specify Host Name for each virtual machine starting with 0 respectively."
     type    = "list"
 }
+variable "admin_password" {
+    description = "Specify password for each virtual machine starting with 0 respectively."
+    type    = "list"
+}
 
 variable "backend_address_pools_ids" {
     description = "Backend Address Pool IDs used to attached each VM behind Azure Load Balancer."    
