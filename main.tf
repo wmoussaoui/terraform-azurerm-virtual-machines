@@ -2,13 +2,13 @@
 # VIRTUAL MACHINE RESOURCES
 #############################################################
 
-resource "azurerm_public_ip" "public_ip" {
-    count               = "${var.nb_instances}"
-    name                         = "${element(var.host_names, count.index)}"
-    location                     = "${var.location}"
-    resource_group_name          = "${var.resource_group}"
-    public_ip_address_allocation = "static"
-}
+#resource "azurerm_public_ip" "public_ip" {
+  #  count               = "${var.nb_instances}"
+  #  name                         = "${element(var.host_names, count.index)}"
+   # location                     = "${var.location}"
+   # resource_group_name          = "${var.resource_group}"
+   # public_ip_address_allocation = "static"
+#}
 
 resource "azurerm_network_interface" "network_interface_card" {
     name                      = "${element(var.host_names, count.index)}NIC"
@@ -20,10 +20,10 @@ resource "azurerm_network_interface" "network_interface_card" {
     ip_configuration {
         name                          = "${element(var.host_names, count.index)}Configuration"
         subnet_id                     = "${var.subnet_id}"
-        private_ip_address_allocation = "static"
-        private_ip_address            = "${element(var.private_ip_addresses, count.index)}"
-        public_ip_address_id          = "${element(azurerm_public_ip.public_ip.*.id, count.index)}"
-        load_balancer_backend_address_pools_ids = ["${element(var.backend_address_pools_ids, count.index)}"]
+        private_ip_address_allocation = "Dynamique"
+        #private_ip_address            = "${element(var.private_ip_addresses, count.index)}"
+        #public_ip_address_id          = "${element(azurerm_public_ip.public_ip.*.id, count.index)}"
+        #load_balancer_backend_address_pools_ids = ["${element(var.backend_address_pools_ids, count.index)}"]
     }
 }
 
