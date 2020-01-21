@@ -56,14 +56,10 @@ resource "azurerm_virtual_machine" "virtual_machine" {
         admin_password = "${element(var.admin_password, count.index)}"
     }
 
-   # os_profile_linux_config {
-   #     disable_password_authentication = true
-   #     ssh_keys {
-   #         path     = "/home/${element(var.host_names, count.index)}/.ssh/authorized_keys"
-   #         key_data = "${var.ssh_key}"
-   #     }
-   # }
-}
+    os_profile_windows_config {
+        provision_vm_agent = true
+        timezone = "Romance Standard Time"
+    }
 
 resource "azurerm_availability_set" "availability_set" {
   name                = "${var.availability_set_name}"
