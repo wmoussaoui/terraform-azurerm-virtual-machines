@@ -12,10 +12,10 @@ variable "resource_group" {
     default = "Default"
 }
 
-variable "private_ip_addresses" {
-    description = "Specify list if private_ips assigned to each VMs respectively"  
-    type    = "list"
-}
+#variable "private_ip_addresses" {
+#    description = "Specify list if private_ips assigned to each VMs respectively"  
+#    type    = "list"
+#}
 
 variable "nsg_id" {
     description = "Specify Network Security Group ID attached to the subnet." 
@@ -88,7 +88,7 @@ variable "admin_password" {
     type    = "list"
 }
 
-variable "backend_address_pools_ids" {
-    description = "Backend Address Pool IDs used to attached each VM behind Azure Load Balancer."    
-    type    = "list"
-}
+#variable "backend_address_pools_ids" {
+#    description = "Backend Address Pool IDs used to attached each VM behind Azure Load Balancer."    
+#    type    = "list"
+#}
