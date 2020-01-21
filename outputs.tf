@@ -2,10 +2,10 @@
 # VIRTUAL MACHINE OUTPUTS
 #############################################################
 
-output "public_ip_addresses_name" {
-    description = "Output public IP address for each Virtual Machine."  
-    value = "${azurerm_public_ip.public_ip.*.ip_address}"
-}
+#output "public_ip_addresses_name" {
+#    description = "Output public IP address for each Virtual Machine."  
+#    value = "${azurerm_public_ip.public_ip.*.ip_address}"
+#}
 
 output "virtual_machine_name" {
     description = "Output name of each Virtual Machine."
